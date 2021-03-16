@@ -45,11 +45,131 @@ td, th {
 
 body {
   background: white;
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background: #ebebeb;
+  margin: 1rem;
+}
+.localisation .localisation_txt {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.exploration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background: #F2F2F2;
+  padding: 2rem;
+}
+.exploration h2 {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.button {
+  width: fit-content;
+  padding: 1%;
+  background-color: #F153CC;
+  border-radius: 2rem;
+}
+.button p {
+  color: #FFF;
+  font-weight: bold;
+}
+
+.fonctionnement, .restaurant_bloc, .restaurant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fonction_title, .resto_title {
+  font-weight: bolder;
+  font-size: larger;
+  margin: 1rem;
+}
+
+.fct_card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.fonction_choice {
+  background: #F2F2F2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  width: 30%;
+}
+.fonction_choice .fct_logo {
+  color: #7e7e7e;
+}
+
+.restaurant_bloc {
+  width: 100%;
+  background: #F2F2F2;
+  display: flex;
+}
+
+.carte_bloc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.carte {
+  background: #F6F6F6;
+  position: relative;
+  border-radius: 1rem;
+  width: 45%;
+  margin: 1rem;
+}
+
+.carte_img {
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+}
+
+.resto_caption {
+  margin: 1rem;
+}
+.resto_caption h3 {
+  font-weight: bold;
+}
+.resto_caption p {
+  margin: 0 0 0.25rem;
 }
 
 p {
   margin: 1rem;
-  color: blue;
 }
 
 /*# sourceMappingURL=style.css.map */

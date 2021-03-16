@@ -1,10 +1,123 @@
 @import "libs/reset.scss";
+@import "mixin.scss";
 
 
 body{
     background: white;
+    font-family: Roboto, sans-serif;
+    
+}
+    
+$grey: #ebebeb;
+$grey_light: #F2F2F2;
+$white: #FFF;
+$pink: #F153CC;
+.header{
+    @include align_bloc;
+    margin: 1rem;
+
+}
+.localisation{
+    @include align_bloc;
+    @include align_logo;
+    @include bloc;
+    
+    .localisation_txt{
+        
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.exploration{
+    @include align_bloc;
+    flex-direction: column;
+    @include bloc2;
+    padding: 2rem;
+    h2{ font-weight: bolder;
+        font-size: 2rem;
+
+    }
+    
+}
+.button{
+    width: fit-content;
+    padding: 1%;
+    background-color: $pink;
+    border-radius: 2rem;
+    p{
+        color: $white;
+        font-weight: bold;
+    }
+}
+.fonctionnement, .restaurant_bloc, .restaurant{
+    @include align_bloc;
+    flex-direction: column;
+}
+.fonction_title, .resto_title{
+    @include bold;
+        margin: 1rem;
+}
+.fct_card{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2rem;
+
+    
+}
+
+.fonction_choice{
+
+    background: $grey_light;
+    @include align_logo;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    width: 30%;
+    .fct_logo{
+       color:  #7e7e7e;
+    }
+
+}
+.restaurant_bloc{
+    @include bloc2;
+    display: flex;
+    
+}
+.carte_bloc{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.carte{
+    
+    background: #F6F6F6;
+    position: relative;
+    border-radius: 1rem;
+    width: 45%;
+    margin: 1rem;
+}
+    
+.carte_img{
+    height: 12rem;
+    object-fit: cover;   
+    border-radius: 1rem 1rem 0 0 ;
+    width: 100%;
+}
+.resto_caption{
+    
+    margin: 1rem;
+    h3{
+        font-weight: bold;
+    }
+    p{
+        margin: 0 0 .25rem;
+    }
 }
 p{
+    
     margin: 1rem;
-    color: blue; 
+    
 }
