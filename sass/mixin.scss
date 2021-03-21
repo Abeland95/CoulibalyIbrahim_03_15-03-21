@@ -31,3 +31,10 @@
     font-weight: bolder;
     font-size: larger;
 }
+
+@mixin mini-bloc {
+    background: $grey_light;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
+}

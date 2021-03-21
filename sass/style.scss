@@ -3,10 +3,12 @@
 @font-face{ 
     font-family: 'Roboto';
     src: url(Roboto/Roboto-Regular.ttf);
+    
 }
 @font-face{
     font-family: 'Shrikhand';
     src: url(Shrikhand-Regular.otf);
+    
 }
 
 body{
@@ -21,14 +23,15 @@ $white: #FFF;
 $pink: #F153CC;
 .header{
     @include align_bloc;
-    padding: 1rem
+    padding: 1rem;
+    
 
 }
 .localisation{
     @include align_bloc;
     @include align_logo;
     @include bloc;
-    
+    box-shadow: 0 0 1rem rgb(0 0 0 / 25%);
     .localisation_txt{
 
         font-size: 1.2rem;
@@ -39,7 +42,12 @@ p{
     margin: 0.8rem;
 }
 
-// HAUT DE PAGE
+a{
+    color: black;
+    text-decoration: none;
+}
+
+////////////////////////////////////////////////////////////////////////// HAUT DE PAGE
 .exploration{
     @include align_bloc;
     flex-direction: column;
@@ -51,7 +59,7 @@ p{
     }
     
 }
-.button{
+.button, .button2{
     width: fit-content;
     padding: 0.5%;
     background-color: $pink;
@@ -63,7 +71,7 @@ p{
 }
 
 
-// FONCTIONNEMENT
+//////////////////////////////////////////////////////////////////////////////// FONCTIONNEMENT
 .fonctionnement, .restaurant_bloc, .restaurant{
     @include align_bloc;
     flex-direction: column;
@@ -94,6 +102,7 @@ p{
     border-radius: 2rem;
     padding: 1rem 2rem;
     width: 30%;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
     .fct_logo{
        color:  #7e7e7e;
     }
@@ -103,7 +112,7 @@ p{
     }
 }
 
-// RESTAURANT
+///////////////////////////////////////////////////////////////////////// RESTAURANT
 .restaurant_bloc{
     @include bloc2;
     display: flex;
@@ -137,6 +146,7 @@ p{
 }
 .resto_caption{
     
+    margin: 0.25rem 1rem;
     
     h3{
         font-weight: bold;
@@ -148,7 +158,7 @@ p{
     }
 }
 
-// FOOTER
+///////////////////////////////////////////////////////////////////////////////////////// FOOTER
 .footer{
     background-color: #353535;
     font-family: Roboto, sans-serif;
@@ -166,5 +176,52 @@ i{
     padding-right: 0.5rem;
 }
 
-// SMARTPHONE
+/////////////////////////////////////////////////////////////////// PAGE RESTAURANT
+.resto_background{
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 32rem;
+}
+.resto_menu{
+    background-color: #F6F6F6;
+    margin-top: -4rem; /*Fais monter le bloc au lieu de faire descendre*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 2rem 2rem 0 0; /*Arrondir les angles du haut*/
+    z-index: 1; /*Permet de faîre passer au 1er plan*/
+    position: relative; /*Permet d'activer le z-index*/
+
+    
+}
+.title_menu{
+    font-family: Shrikhand, sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    padding-top: 2rem;
+}
+.menu{
+    @include mini-bloc;
+    margin-bottom: 1rem;
+    background-color: $white;
+    box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3.menu_section_title{
+    margin-bottom: 1rem;
+}
+
+.menu_section_header{
+    
+    display: flex;
+    flex-direction: column;
+    p{
+        margin: 0;
+    }
+}
 
