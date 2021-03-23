@@ -2,8 +2,7 @@
 @import "mixin.scss";
 @font-face{ 
     font-family: 'Roboto';
-    src: url(Roboto/Roboto-Regular.ttf);
-    
+    src: url(Roboto/Roboto-Regular.ttf);    
 }
 @font-face{
     font-family: 'Shrikhand';
@@ -55,7 +54,7 @@ a{
     padding: 2rem;
     h2{ font-weight: bolder;
         font-size: 2rem;
-
+        text-align: center;
     }
     
 }
@@ -64,6 +63,7 @@ a{
     padding: 0.5%;
     background-color: $pink;
     border-radius: 2rem;
+    background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
     p{
         color: $white;
         font-weight: bold;
@@ -145,8 +145,9 @@ a{
     width: 100%;
 }
 .resto_caption{
-    
-    margin: 0.25rem 1rem;
+    @include align_logo;
+    justify-content: space-between;
+    margin: 0.25rem 0.25rem;
     
     h3{
         font-weight: bold;
@@ -155,6 +156,10 @@ a{
     p{
         margin: 0 0 .25rem;
         font-size: 1.2rem;
+        font-weight: normal;
+    }
+    i{
+        font-size: 2rem;
     }
 }
 
@@ -177,10 +182,45 @@ i{
 }
 
 /////////////////////////////////////////////////////////////////// PAGE RESTAURANT
+
+.img_site{
+    @media (max-width: 980px){
+        height: 2.5rem;
+    }
+}
+.arrow{
+    position: absolute;
+    left: 1rem;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    top: 7%;
+    color: #000;
+    @media (max-width: 980px){
+        top: 5.5%;
+        font-size: 1.2rem;
+    }
+}
 .resto_background{
     object-fit: cover;
-    max-width: 100%;
-    max-height: 32rem;
+    width: 100%;
+    @media (max-width: 980px){
+        max-height: 32rem;
+    }
+    
+}
+.menu_container{
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.menu_price{
+    width: fit-content;
+    font-weight: bold;
 }
 .resto_menu{
     background-color: #F6F6F6;
@@ -197,9 +237,9 @@ i{
 }
 .title_menu{
     font-family: Shrikhand, sans-serif;
-    font-size: 1.5rem;
     width: 100%;
-    padding-top: 2rem;
+
+    
 }
 .menu{
     @include mini-bloc;
@@ -208,20 +248,85 @@ i{
     box-shadow: 0.25rem 0.25rem 1rem rgb(0 0 0 / 10%);
     display: flex;
     flex-direction: row;
+    padding: 0;
     justify-content: space-between;
     align-items: center;
 }
-
+.menu_section{
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
 h3.menu_section_title{
     margin-bottom: 1rem;
+    font-weight: 200;
+    font-size: 1.2rem; 
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: .5rem;
+
+}
+h3.menu_section_title::after{
+    content: "";
+    width: 3.3rem;
+    height: .25rem;
+    background-color: #99e2d0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .menu_section_header{
     
     display: flex;
     flex-direction: column;
+    margin: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 85%;
+    @media (max-width: 980px){
+        width: 80%;
+        
+    }
+    h4{
+        font-weight: bold;
+    }
     p{
         margin: 0;
+        overflow: hidden; //Cache ce qui dépace du block
+        text-overflow: ellipsis; //Mets des petits pts à ce qui dépasse
     }
 }
 
+.menu_head{
+    @include star;
+    width: 100%;
+    font-size: 1.7rem;
+    padding-top: 1rem;
+    
+}
+
+.menu_choice{
+    background-color: #99E2D0;
+    margin: -1rem -5rem -1rem 1rem;
+    height: 4.4rem;
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .5s;
+}
+.m_choice_icon{
+    background-color: $white;
+    border-radius: 100px;
+    height: 1.6rem;
+    width: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i{
+        color: #99E2D0;
+        padding: 1rem;
+    }
+}
