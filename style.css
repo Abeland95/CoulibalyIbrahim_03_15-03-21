@@ -52,6 +52,14 @@ td, th {
   font-family: "Shrikhand";
   src: url(Shrikhand-Regular.otf);
 }
+@keyframes load_page {
+  0% {
+    background-color: blue;
+  }
+  100% {
+    display: none;
+  }
+}
 body {
   background: white;
   font-family: Roboto, sans-serif;
@@ -89,6 +97,62 @@ a {
   text-decoration: none;
 }
 
+@keyframes load_page {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    position: absolute;
+  }
+}
+.anime_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #F6F6F6;
+  animation: load_page ease 4s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+}
+.anime_page p {
+  font-family: Shrikhand, sans-serif;
+}
+
+.anime_logo1 {
+  width: 100%;
+  font-size: 3rem;
+}
+
+.anime_element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes refresh-turn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+i.fas.fa-sync {
+  color: #7e7e7e;
+  opacity: 0.6;
+  font-size: 3rem;
+  border-radius: 100px;
+  animation: refresh-turn 1s linear infinite;
+}
+
 .exploration {
   display: flex;
   justify-content: center;
@@ -121,6 +185,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 .fonction_title, .resto_title {
