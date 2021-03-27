@@ -128,11 +128,19 @@ i.fas.fa-sync{
     flex-direction: column;
     position: relative;
 }
-
+.fonctionnement{
+    @media (max-width: 980px) {
+        padding: 1rem;
+    }
+}
 .fonction_title, .resto_title{
     @include bold;
-        margin: 1rem;
         font-size: 2rem;
+        margin: 1rem;
+    @media (max-width: 980px){
+        margin: 0;
+        align-self: flex-start;
+    }
 }
 .fct_card{
     width: 100%;
@@ -142,7 +150,7 @@ i.fas.fa-sync{
     margin: 2rem;
     @media (max-width: 980px){
         @include column;
-        padding: 1.5rem;
+        margin: 1rem;
     }
     
 }
@@ -293,6 +301,11 @@ i{
 
     
 }
+
+@keyframes scrollbar{
+    0%{transform: scale(0)}
+    100%{transform: scale(1)}
+}
 .menu{
     @include mini-bloc;
     margin-bottom: 1rem;
@@ -303,6 +316,41 @@ i{
     padding: 0;
     justify-content: space-between;
     align-items: center;
+    animation: scrollbar 0.8s;
+    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+    
+}
+
+//Animation retard
+.scroll-1{
+    animation-delay: 0s;
+}
+.scroll-2{
+    animation-delay: .1s;
+}
+.scroll-3{
+    animation-delay: .2s;
+}
+.scroll-4{
+    animation-delay: .1s;
+}
+.scroll-5{
+    animation-delay: .4s;
+}
+.scroll-6{
+    animation-delay: .5s;
+}
+.scroll-7{
+    animation-delay: .6s;
+}
+.scroll-8{
+    animation-delay: .7s;
+}
+.scroll-9{
+    animation-delay: .8s;
+}
+.scroll-10{
+    animation-delay: .9s;
 }
 .menu_section{
     width: 100%;
