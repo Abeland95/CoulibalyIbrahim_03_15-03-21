@@ -77,27 +77,56 @@ a{
     }
 }
 
-.anime_logo1{
+.anime_logo0{
     width: 100%;
     font-size: 3rem;
 }
+
 .anime_element{
     @include column;
-}
-@keyframes refresh-turn {
-    0%{transform: rotate(0deg)}
-    100%{transform: rotate(360deg)}
-}
-
-i.fas.fa-sync{
-    color: #7e7e7e;
-    opacity: 0.6;
-    font-size: 3rem;
-    border-radius: 100px;
-    animation: refresh-turn 1s linear infinite;
     
 }
-
+.lateral_step{
+    height: 5rem;
+    @include column;
+    justify-content: space-around;
+}
+@keyframes lateral-step{
+    0%{ transform: translateX(0);
+        -ms-transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+    25%{transform: translateX(-1.5rem) scale(0.5);
+        -ms-transform: translateX(-1.5rem) scale(0.5);
+        -webkit-transform: translateX(-1.5rem) scale(0.5);    
+    }
+    75%{transform: translateX(1.5rem) scale(1.5);
+        -ms-transform: translateX(1.5rem) scale(1.5);
+        -webkit-transform: translateX(1.5rem) scale(1.5)
+    }
+    100%{transform: translateX(0);
+        -ms-transform: translateX(0);
+        -webkit-transform: translateX(0)
+    }
+}
+.anime_logo{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1rem;
+    animation: lateral-step 1s linear infinite;
+    animation-iteration-count: 1s;
+}
+.step1{
+    background-color: #9356DC;
+}
+.step2{
+    background-color: #FF79DA;
+    animation-delay: .33s;
+}
+.step3{
+    background-color: #99E2D0;
+    animation-delay: .66s
+}
 ////////////////////////////////////////////////////////////////////////// HAUT DE PAGE
 .exploration{
     @include align_bloc;
@@ -149,9 +178,11 @@ i.fas.fa-sync{
     flex-direction: row;
     justify-content: space-around;
     margin: 2rem;
+    counter-reset: number; //Permet d'initialiser la fct compatge
     @media (max-width: 980px){
         @include column;
         margin: 1rem;
+        padding: 1rem;
     }
     
 }
@@ -160,6 +191,7 @@ i.fas.fa-sync{
 
     background: $grey_light;
     @include align_logo;
+    position: relative;
     border-radius: 2rem;
     padding: 1rem 2rem;
     width: 30%;
@@ -171,6 +203,18 @@ i.fas.fa-sync{
         width: 100%;
         margin-bottom: 1rem;
     }
+}
+.fonction_choice::before{
+    content: counter(number) " ";
+    counter-increment: number 1;  //Permettant de comptet avec un pas de 1
+    background: #9356dc;
+    border-radius: 100px;
+    height: 1.5rem;
+    width: 1.5rem;
+    @include align_bloc;
+    color: white;
+    position: absolute;
+    left: -.5rem;
 }
 
 ///////////////////////////////////////////////////////////////////////// RESTAURANT
@@ -234,6 +278,16 @@ i.fas.fa-sync{
     line-height: 2.5rem;
 
 }
+
+.footer_link{
+    color: $white;
+}
+.footer_link:hover{
+    
+    text-decoration: underline;
+    
+} 
+  
 .footer_head{
     font-family: Shrikhand, sans-serif;
     
@@ -303,8 +357,13 @@ i{
 }
 
 @keyframes scrollbar{
-    0%{transform: scale(0)}
-    100%{transform: scale(1)}
+    0%{ transform: scale(0);
+        -ms-transform: scale(0);
+        -webkit-transform: scale(0)}
+    100%{transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1)
+    }
 }
 .menu{
     @include mini-bloc;
@@ -415,6 +474,9 @@ h3.menu_section_title::after{
     background-color: #99E2D0;
     margin: -1rem -4rem -1rem 1rem;
     height: 4.4rem;
+    @media (max-width: 980px) {
+        height: 4.35rem;
+    }
     width: 4rem;
     display: flex;
     align-items: center;
@@ -439,12 +501,17 @@ h3.menu_section_title::after{
         transform: rotate(180deg);
     }
 }
-
+.menu:active{
+    background-color: #a2d1c5;
+    
+}
 .menu:hover{
     
     .menu_choice{
         margin: 0rem 0rem 0rem 0.5rem;
         width: 5rem;
+        
+        
     }
     .m_choice_icon{
         transform: rotate(180deg);
