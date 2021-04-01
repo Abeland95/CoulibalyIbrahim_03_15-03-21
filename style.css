@@ -60,6 +60,13 @@ td, th {
     display: none;
   }
 }
+.header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 body {
   background: white;
   font-family: Roboto, sans-serif;
@@ -127,7 +134,7 @@ a {
   font-family: Shrikhand, sans-serif;
 }
 
-.anime_logo1 {
+.anime_logo0 {
   width: 100%;
   font-size: 3rem;
 }
@@ -138,20 +145,58 @@ a {
   align-items: center;
 }
 
-@keyframes refresh-turn {
+.lateral_step {
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@keyframes lateral-step {
   0% {
-    transform: rotate(0deg);
+    transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-1.5rem) scale(0.5);
+    -ms-transform: translateX(-1.5rem) scale(0.5);
+    -webkit-transform: translateX(-1.5rem) scale(0.5);
+  }
+  75% {
+    transform: translateX(1.5rem) scale(1.5);
+    -ms-transform: translateX(1.5rem) scale(1.5);
+    -webkit-transform: translateX(1.5rem) scale(1.5);
   }
   100% {
-    transform: rotate(360deg);
+    transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
   }
 }
-i.fas.fa-sync {
-  color: #7e7e7e;
-  opacity: 0.6;
-  font-size: 3rem;
-  border-radius: 100px;
-  animation: refresh-turn 1s linear infinite;
+.anime_logo {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  animation: lateral-step 1s linear infinite;
+  -moz-animation: lateral-step 1s linear infinite;
+  -webkit-animation: lateral-step 1s linear infinite;
+  animation-iteration-count: 1s;
+}
+
+.step1 {
+  background-color: #9356DC;
+}
+
+.step2 {
+  background-color: #FF79DA;
+  animation-delay: 0.33s;
+}
+
+.step3 {
+  background-color: #99E2D0;
+  animation-delay: 0.66s;
 }
 
 .exploration {
@@ -214,6 +259,7 @@ i.fas.fa-sync {
   flex-direction: row;
   justify-content: space-around;
   margin: 2rem;
+  counter-reset: number;
 }
 @media (max-width: 980px) {
   .fct_card {
@@ -221,6 +267,7 @@ i.fas.fa-sync {
     flex-direction: column;
     align-items: center;
     margin: 1rem;
+    padding: 1rem;
   }
 }
 
@@ -229,6 +276,7 @@ i.fas.fa-sync {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
   border-radius: 2rem;
   padding: 1rem 2rem;
   width: 30%;
@@ -242,6 +290,21 @@ i.fas.fa-sync {
     width: 100%;
     margin-bottom: 1rem;
   }
+}
+
+.fonction_choice::before {
+  content: counter(number) " ";
+  counter-increment: number 1;
+  background: #9356dc;
+  border-radius: 100px;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: -0.5rem;
 }
 
 .restaurant_bloc {
@@ -306,6 +369,14 @@ i.fas.fa-sync {
   padding: 1rem;
   font-size: 1.3rem;
   line-height: 2.5rem;
+}
+
+.footer_link {
+  color: #FFF;
+}
+
+.footer_link:hover {
+  text-decoration: underline;
 }
 
 .footer_head {
@@ -385,9 +456,13 @@ i {
 @keyframes scrollbar {
   0% {
     transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
   }
   100% {
     transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 .menu {
@@ -518,6 +593,11 @@ h3.menu_section_title::after {
   justify-content: center;
   transition-duration: 0.5s;
 }
+@media (max-width: 980px) {
+  .menu_choice {
+    height: 4.35rem;
+  }
+}
 
 .m_choice_icon {
   background-color: #FFF;
@@ -532,6 +612,10 @@ h3.menu_section_title::after {
   color: #99E2D0;
   padding: 1rem;
   transform: rotate(180deg);
+}
+
+.menu:active {
+  background-color: #a2d1c5;
 }
 
 .menu:hover .menu_choice {

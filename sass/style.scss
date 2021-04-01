@@ -13,6 +13,13 @@
         0%{ background-color: blue;}
         100% {display: none;}
 }
+
+.header {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    }
 body{
     background: white;
     font-family: Roboto, sans-serif;
@@ -114,6 +121,8 @@ a{
     width: 1rem;
     border-radius: 1rem;
     animation: lateral-step 1s linear infinite;
+    -moz-animation: lateral-step 1s linear infinite;
+    -webkit-animation:lateral-step 1s linear infinite;
     animation-iteration-count: 1s;
 }
 .step1{
