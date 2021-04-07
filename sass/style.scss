@@ -71,8 +71,8 @@ a{
     height: 100%;
     width: 100%;
     background-color: #F6F6F6;
-    -webkit-animation: load_page ease 4s;
-            animation: load_page ease 4s;
+    -webkit-animation: load_page ease 3s;
+            animation: load_page ease 3s;
     -webkit-animation-delay: 1.75s;
             animation-delay: 1.75s;
     -webkit-animation-fill-mode: both;
@@ -143,8 +143,7 @@ a{
     animation: lateral-step 1s linear infinite;
     -moz-animation: lateral-step 1s linear infinite;
     -webkit-animation:lateral-step 1s linear infinite;
-    -webkit-animation-iteration-count: 1s;
-            animation-iteration-count: 1s;
+    
 }
 .step1{
     background-color: #9356DC;
@@ -175,13 +174,17 @@ a{
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    padding: 0.5%;
+    padding: 2% 10%;
+    @media (max-width: 600px) {
+        padding: 4.5% 10%;
+    }
     background-color: $pink;
     border-radius: 2rem;
     background-image: linear-gradient(0deg,rgba(147,86,220,.9),rgba(255,121,218,.9));
-    p{
+    a{
         color: $white;
         font-weight: bold;
+        font-size: 1.3rem;
     }
 }
 
@@ -272,8 +275,7 @@ a{
     margin: 1rem;
     @media (max-width: 980px){
         width: 100%;
-        -webkit-margin-after: 1rem;
-                margin-block-end: 1rem;
+        
     }
     
 }
@@ -324,12 +326,12 @@ a{
     
     right: 0.5rem;
     cursor: pointer;
-    background-color: black;
+    background-color: black; //Définit la couleur du coeur
 }
 .heart_menu{
     bottom: 0.4rem;
     right: 0.5rem;
-    width: 2.25rem;
+    width: 2.2rem;
     height: 1.6rem;
 }
 .like{
@@ -446,6 +448,9 @@ i{
 .title_menu{
     font-family: Shrikhand, sans-serif;
     width: 100%;
+    @media (max-width: 330px){
+        width: 80%;
+    }
 
     
 }
@@ -589,7 +594,7 @@ h3.menu_section_title::after{
 
 .menu_choice{
     background-color: #99E2D0;
-    margin: -1rem -4rem -1rem 1rem;
+    margin: -1rem -5rem -1rem 2rem;
     height: 4.4rem;
     @media (max-width: 980px) {
         height: 4.35rem;
@@ -619,7 +624,7 @@ h3.menu_section_title::after{
     }
 }
 
-.menu:hover{
+.menu:hover, menu:active{
     
     .menu_choice{
         margin: 0rem 0rem 0rem 0.5rem;
