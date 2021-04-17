@@ -159,6 +159,18 @@ a{
             animation-delay: .66s
 }
 ////////////////////////////////////////////////////////////////////////// HAUT DE PAGE
+h1{
+    font-family: Shrikhand, sans-serif;
+    text-align: center;
+    font-size: 4rem;
+    position: relative;
+    @media (max-width: 980px) {
+        font-size: 3rem;
+    }
+    @media (max-width: 370px) {
+        font-size: 2rem;
+    }
+}
 .exploration{
     @include align_bloc;
     flex-direction: column;
@@ -201,6 +213,7 @@ a{
     }
 }
 .fonction_title, .resto_title{
+    font-family: Roboto, sans-serif;
     @include bold;
         font-size: 2rem;
         margin: 1rem;
@@ -233,7 +246,7 @@ a{
     padding: 1rem 2rem;
     width: 30%;
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
-    .fct_logo{
+    i{
        color:  #7e7e7e;
     }
     @media (max-width: 980px){
@@ -255,21 +268,27 @@ a{
 }
 
 ///////////////////////////////////////////////////////////////////////// RESTAURANT
-.restaurant_bloc{
+section.restaurant_bloc{
     @include bloc2;
     display: flex;
     padding: 1rem;
+   
+}
+.resto_title{
+    background: $grey_light;
 }
 .carte_bloc{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    background: $grey_light;
 }
 .carte{
     
     background: #F6F6F6;
     position: relative;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 15%);
     border-radius: 1rem;
     width: 45%;
     margin: 1rem;
@@ -322,7 +341,7 @@ a{
     justify-content: center;
     bottom: 1.5rem;
     height: 1.9rem;
-    width: 2.5rem;
+    width: 2.45rem;
     
     right: 0.5rem;
     cursor: pointer;
@@ -361,14 +380,24 @@ a{
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////// FOOTER
-.footer{
+footer{
     background-color: #353535;
     font-family: Roboto, sans-serif;
     color: white;
     padding: 1rem;
     font-size: 1.3rem;
     line-height: 2.5rem;
+    a{
+        display: flex;
+        flex-direction: column;
+    }
 
+}
+.footer1{
+    @include align_logo;
+    i{
+        margin-right: 0.5rem;
+    }
 }
 
 .footer_link{
